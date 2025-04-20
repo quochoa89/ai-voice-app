@@ -62,3 +62,11 @@ def generate_video_from_script(script, bg_image_file, show_subtitle, layout, max
     final_video.write_videofile(final_path, codec='libx264', audio_codec='aac', fps=24, verbose=False, logger=None)
 
     return final_path
+    from moviepy.editor import TextClip, CompositeVideoClip
+
+def generate_video_from_script(script_text, output_path="output_video.mp4"):
+    text_clip = TextClip(script_text, fontsize=24, color='white', size=(720, 480))
+    text_clip = text_clip.set_duration(10)
+    final_clip = CompositeVideoClip([text_clip])
+    final_clip.write_videofile(output_path, fps=24)
+
