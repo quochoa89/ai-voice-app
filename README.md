@@ -1,2 +1,2 @@
-# ai-voice-app
-Tool tạo text to speech
+# ai-video-app
+Tool tạo text to Video
